@@ -5,7 +5,7 @@ app.controller('MainController', function ($scope, $timeout, WeatherService, Loc
   $scope.user = user;
 
   if(!$scope.user.location.city) {
-    LocationService.getAdressDetatails($scope.user.location.lat, $scope.user.location.lng)
+    LocationService.getAdressDetails($scope.user.location.lat, $scope.user.location.lng)
       .then(function(response) {
         $scope.user.location.city = response;
       })

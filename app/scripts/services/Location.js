@@ -26,7 +26,7 @@ app.provider('LocationService', function() {
         });
         return d.promise;
       },
-      getAdressDetatails: function(lat, lng) {
+      getAdressDetails: function(lat, lng) {
         var d = $q.defer();
         $http({
           method: 'GET',
