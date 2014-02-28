@@ -6,10 +6,10 @@ app.controller('SettingsController', function($scope, UserService, LocationServi
 	$scope.save = function() {
 		UserService.save();
 	}
-	$scope.setCurrentLocation = function(city) {
-		$scope.user.location.city = city.formatted_address;
-		$scope.user.location.lat = city.geometry.location.lat;
-		$scope.user.location.lng = city.geometry.location.lng;
+	$scope.setCurrentLocation = function(currentLocation) {
+		$scope.user.location.city = currentLocation.formatted_address;
+		$scope.user.location.lat = currentLocation.geometry.location.lat;
+		$scope.user.location.lng = currentLocation.geometry.location.lng;
 	}
 	$scope.fetchCities = LocationService.getLocationDetails;
 
