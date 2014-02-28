@@ -1,0 +1,15 @@
+<div id="settings">
+	<h2>Settings</h2>
+	<form ng-submit="save()">
+		<input 
+			type="text"
+			ng-model="user.location.city"
+			auto-fill="fetchCities"
+			reslist="reslist"
+			autocompete="off"
+			placeholder="Enter a location" 
+		/>
+		<input class="btn btn-primary" type="submit" value="save" />
+	</form>
+	<button class="btn btn-danger" ng-click="resetStorage()">Clear storage</button>
+</div>

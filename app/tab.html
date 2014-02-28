@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="presentlyApp" data-ng-csp="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Presently</title>
+    <meta name="description" content="A currently clone">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular/angular-csp.css" />
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+    <div class="container" ng-view=""></div>
+    <div id="actionbar">
+        <ul class="list-inline">
+            <li><a href="#/" class="glyphicon glyphicon-home"></a></li>
+            <li><a href="#/settings" class="glyphicon glyphicon-cog"></a></li>
+        </ul>
+    </div>
+    
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/lodash/dist/lodash.min.js"></script>
+    <script src="bower_components/lodash/dist/lodash.underscore.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services/User.js"></script>
+    <script src="scripts/services/Weather.js"></script>
+    <script src="scripts/services/Location.js"></script>
+    <script src="scripts/controllers/MainController.js"></script>
+    <script src="scripts/controllers/SettingsController.js"></script>
+    <script src="scripts/directives/AutoFill.js"></script>
+  </body>
+</html>
