@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('presentlyApp', ['ngRoute']);
+var app = angular.module('presentlyApp', ['ngRoute', 'ui.bootstrap']);
 
 app.config(function ($routeProvider, $httpProvider) {
   $routeProvider

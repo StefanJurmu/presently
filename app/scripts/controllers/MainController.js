@@ -3,18 +3,19 @@
 app.controller('MainController', function ($scope, $timeout, WeatherService, LocationService, user) {
   $scope.date = {};
   $scope.user = user;
-
-  if(!$scope.user.location.city) {
-    LocationService.getAdressDetails($scope.user.location.lat, $scope.user.location.lng)
-      .then(function(response) {
-        $scope.user.location.city = response;
-      })
-  }
+  console.log($scope.user);
 
   var updateTime = function() {
     $scope.date = new Date();
-  	$timeout(updateTime, 1000); 
+    $timeout(updateTime, 1000);
   }
+
+
+    LocationService.getAdressDetails($scope.user.location.lat, $scope.user.location.lng)
+      .then(function(response) {
+        $scope.user.location.name = response;
+      })
+
 
   $scope.weather = {}
   WeatherService.getWeatherForecast($scope.user.location)

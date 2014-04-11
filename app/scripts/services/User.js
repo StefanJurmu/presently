@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('UserService', function($q) {
+app.factory('UserService', function($q, $http) {
 	var service = {
 		user: {
 			location: {}
@@ -33,6 +33,11 @@ app.factory('UserService', function($q) {
 			chrome.storage.sync.clear(function(){
 				console.log('Storage cleared');
 			});
+			service = {
+				user: {
+					location: {}
+				}
+			}
 		}
 	};
 	return service;

@@ -1,19 +1,21 @@
 'use strict';
 
-app.controller('SettingsController', function($scope, UserService, LocationService) {
-	$scope.user = UserService.user;
-
+app.controller('SettingsController', function($scope, $http, UserService, LocationService) {
+	$scope.asyncSelected = UserService.user;
+	$scope.fetchCities = LocationService;
 	$scope.save = function() {
-		UserService.save();
+		$scope.fetchCities.getGeometryDetails($scope.asyncSelected.location).then(function(details) {
+			$scope.asyncSelected.location.lat = details.lat;
+			$scope.asyncSelected.location.lng = details.lng;
+			UserService.save();
+		});
 	}
-	$scope.setCurrentLocation = function(currentLocation) {
-		$scope.user.location.city = currentLocation.formatted_address;
-		$scope.user.location.lat = currentLocation.geometry.location.lat;
-		$scope.user.location.lng = currentLocation.geometry.location.lng;
-	}
-	$scope.fetchCities = LocationService.getLocationDetails;
 
 	$scope.resetStorage = function() {
 		UserService.reset();
+		$scope.asyncSelected = {};
 	}
+
+	$scope.selected = undefined;
+
 });
