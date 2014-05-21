@@ -20,8 +20,7 @@ app.provider('WeatherService', function() {
         var d = $q.defer();
         $http({
           method: 'GET',
-          url: self.getForecastUrl("forecast", city.lat, city.lng),
-          cache: true
+          url: self.getForecastUrl("forecast", city.lat, city.lng)
         }).success(function(data) {
           if(data.forecast) {
             d.resolve(data.forecast.simpleforecast);

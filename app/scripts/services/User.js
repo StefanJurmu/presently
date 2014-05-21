@@ -30,14 +30,11 @@ app.factory('UserService', function($q, $http) {
 			return d.promise;
 		},
 		reset: function() {
+			var self = this;
 			chrome.storage.sync.clear(function(){
 				console.log('Storage cleared');
 			});
-			service = {
-				user: {
-					location: {}
-				}
-			}
+			self.user.location = {};
 		}
 	};
 	return service;

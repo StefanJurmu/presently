@@ -1,42 +1,88 @@
+body {
+  background: #3193a5;
+}
+.container {
+  position: absolute;
+  width: 100%;
+  margin-top: 40px;
+}
 #datetime h1 {
-  font-size: 6.1em;
+  color: rgba(255,255,255,0.8);
+  font-size: 10em;
+  font-family: 'helvetica-neue-ultra-light';
 }
 #datetime h2 {
-  font-size: 1.0em;
+  color: rgba(0,0,0,0.4);
+  font-size: 2.5em;
+  font-family: 'helvetica-neue-ultra-light';
 }
-
+#forecast {
+  margin-top: 50px;
+}
 #forecast ul li {
-  font-size: 4.5em;
   text-align: center;
+  font-size: 4.5em;
 }
 #forecast ul li h3 {
-  font-size: 1.4em;
+  color: rgba(255,255,255,0.8);
+  font-size: 1.3em;
+}
+#forecast ul li h3 .degrees {
+  font-size: 1em;
+}
+#forecast h4 {
+  color: rgba(0,0,0,0.4);
+  font-weight: 200;
+  font-size: 0.3em;
 }
 #forecast ul li .today h3 {
-  font-size: 1.8em;
+  font-size: 1.7em;
 }
-
+#forecast h2 {
+  color: rgba(0,0,0,0.4);
+  font-size: 2.5em;
+  font-family: 'helvetica-neue-ultra-light';
+}
 #actionbar {
-  position: absolute;
-  bottom: 0.5em;
+  position: fixed;
   right: 1.0em;
+  bottom: 0.5em;
   z-index: 100;
 }
 
 #actionbar a {
+  color: rgba(0,0,0,0.4);
   font-size: 2.2em;
-  color: #000;
 }
+  #actionbar a:hover {
+    color: rgba(250,250,250,0.8);
+    text-decoration: none;
+  }
 
 .t-center {
   text-align: center;
 }
 
+#loader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  background-image: url('../images/loader.gif');
+  background-position: center 55%;
+  background-repeat: no-repeat;
+}
+
 #autolist {
   position: absolute;
   z-index: 200;
-  background: #fff;
   border: 1px solid #ddd;
+  background: #fff;
 }
 
 #autolist li {
@@ -51,4 +97,32 @@
 
 #autolist li:hover {
   background: #e9e9e9;
+}
+
+[data-icon] {
+  color: rgba(0,0,0,0.4);
+  font-size: 1.5em;
+}
+
+[data-icon]:before {
+  content: attr(data-icon);
+  font-family: 'MeteoconsRegular';
+}
+#condition {
+  color: rgba(0,0,0,0.4);
+  font-size: 0.2em;
+}
+
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'helvetica-neue-ultra-light';
+    src: url('../fonts/helvetica-neue-ultra-light.ttf') format('truetype');
+}
+
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'MeteoconsRegular';
+    src: url('../fonts/meteocons-webfont.ttf') format('truetype');
 }
