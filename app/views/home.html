@@ -1,9 +1,10 @@
 <div id="datetime" class="t-center">
-  <h1>{{ date | date:'hh mm ss' }}</h1>
-  <h2>{{ date | date:'EEEE, MMMM yyyy'}}</h2>
+  <h1 class="m-none">{{ date | date:'hh mm ss' }}</h1>
+  <h2 class="m-none">{{ date | date:'EEEE, dd MMMM yyyy'}}</h2>
 </div>
 <div ng-show="showLoader" id="loader"></div>
-<div ng-hide="showLoader" id="forecast">
+<div class="alert alert-danger" ng-show="errorMsg!=''">{{errorMsg}}</div>
+<div ng-hide="showLoader || errorMsg!=''" id="forecast">
   <ul class="row list-unstyled">
     <li ng-repeat="day in weather.forecast.forecastday" class="col-md-3">
       <div ng-class="{today: $index == 0}">

@@ -2,15 +2,14 @@
   "manifest_version": 2,
   "name": "Presently",
   "description": "A currently clone made with AngularJS",
-  "version": "0.2",
+  "version": "0.2.1",
   "permissions": [
+    "bookmarks",
+    "topSites",
     "storage",
     "geolocation",
     "http://api.wunderground.com/api/",
-    "https://maps.googleapis.com/maps/api/",
-    "http://www.panoramio.com/map/",
-    "http://en.wikipedia.org/w/",
-    "http://upload.wikimedia.org/wikipedia/commons/"
+    "https://maps.googleapis.com/maps/api/"
   ],
   "background": {
     "scripts": ["bower_components/angular/angular.min.js"]

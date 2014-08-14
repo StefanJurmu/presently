@@ -13,10 +13,6 @@ app.config(function ($routeProvider, $httpProvider) {
         }
       }
     })
-    .when('/settings', {
-      templateUrl: 'views/settings.html',
-      controller: 'SettingsController'
-    })
     .otherwise({
       redirectTo: '/'
     });

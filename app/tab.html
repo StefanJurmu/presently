@@ -12,10 +12,9 @@
   </head>
   <body>
     <div class="container" ng-view=""></div>
-    <div id="actionbar">
+    <div id="actionbar" ng-controller="SettingsController">
         <ul class="list-inline">
-            <li><a href="#/" class="glyphicon glyphicon-home"></a></li>
-            <li><a href="#/settings" class="glyphicon glyphicon-cog"></a></li>
+            <li><a ng-href="#" ng-click="open()" class="glyphicon glyphicon-cog"></a></li>
         </ul>
     </div>
     <script src="bower_components/angular/angular.js"></script>
