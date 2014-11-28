@@ -5,6 +5,8 @@ app.controller('MainController', function ($scope, $timeout, WeatherService, Loc
   $scope.date = {};
   $scope.user = user;
   $scope.errorMsg = '';
+  $scope.weather = {}
+
   var updateTime = function() {
     $scope.date = new Date();
     $timeout(updateTime, 1000);
@@ -18,7 +20,6 @@ app.controller('MainController', function ($scope, $timeout, WeatherService, Loc
       $scope.errorMsg = 'Something went wrong! Please try again later...';
     };
 
-  $scope.weather = {}
   WeatherService.getWeatherForecast($scope.user.location)
   	.then(function(data) {
   		$scope.weather.forecast = data;

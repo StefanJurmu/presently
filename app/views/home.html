@@ -1,4 +1,4 @@
-<div id="datetime" class="t-center">
+<div id="datetime" class="t-center clockAnimate ng-enter">
   <h1 class="m-none">{{ date | date:'hh mm ss' }}</h1>
   <h2 class="m-none">{{ date | date:'EEEE, dd MMMM yyyy'}}</h2>
 </div>
@@ -6,7 +6,7 @@
 <div class="alert alert-danger" ng-show="errorMsg!=''">{{errorMsg}}</div>
 <div ng-hide="showLoader || errorMsg!=''" id="forecast">
   <ul class="row list-unstyled">
-    <li ng-repeat="day in weather.forecast.forecastday" class="col-md-3">
+    <li ng-repeat="day in weather.forecast.forecastday" class="col-md-3 weatherAnimate">
       <div ng-class="{today: $index == 0}">
         <div data-icon="{{ day.icon | weatherIcon }}" class="{{ day.icon }}">
           <p id="condition">{{ day.conditions }}</p>
